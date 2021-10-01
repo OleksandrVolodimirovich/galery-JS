@@ -1,0 +1,63 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); 
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  overflow: hidden;
+  margin: 0;
+  background: #7952B3;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+}
+.slide{
+  height: 80vh;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  flex: 1;//щоб елементи розтягувалися рывномырно одинаково выдносно ширини (width=100% / к-сть слайдів)
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all .5s;
+  & h3{
+    position: absolute;
+    font-style: 24px;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+  }
+  &.active{
+    flex: 10;//слайд збільшується в 10 раз по відношенню до інших слайдів flex= 1*10
+      & h3{
+      opacity: 1;
+      transition: opacity .3s ease-in .5s;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+@import 'media';
